@@ -17,5 +17,5 @@
 namespace Config {
 	public const string VERSION = "0.1";
 	public const string[] AUTHORS = {"Thomas Pellissier Tanon", null}; //GTK fail if there is no null
-	public const string WEBSITE = "https://github.com/Tpt/sol";
+	public const string WEBSITE = "https://github.com/Tpt/soli";
 }
