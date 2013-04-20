@@ -262,13 +262,13 @@ public class MainUi : Gtk.Application {
 	protected void show_about() {
 		var about = new AboutDialog();
 		about.version = Config.VERSION;
-		about.program_name = "CIML";
+		about.program_name = "SOLI";
 		about.license_type = License.GPL_3_0;
 		about.wrap_license = true;
 		about.authors = Config.AUTHORS;
 		about.website = Config.WEBSITE;
 		about.copyright = "Copyright (C) Thomas Pellissier Tanon";
-		about.comments = "A Small Object-oriented Language interpreter with a GTK+ GUI.";
+		about.comments = "A Small Object-oriented Language Interpreter with a GTK+ GUI.";
 		about.run();
 		about.destroy();
 	}
