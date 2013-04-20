@@ -63,6 +63,9 @@ public class Integer : BindingClass<long> {
 			case "*":
 				return this.new_from_long(val1 * val2);
 			case "/":
+				if(val2 == 0) {
+					throw new ExecutionError.VAR("Division by zero.");
+				}
 				return this.new_from_long(val1 / val2);
 			case "%":
 				return this.new_from_long(val1 % val2);

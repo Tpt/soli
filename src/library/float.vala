@@ -39,7 +39,7 @@ public class Float : BindingClass<double?> {
 		return this.new_from_double(0);
 	}
 
-	/*protected override Var exec_mono_operator(string name, Object operand) throws ExecutionError { TODO
+	protected override Var exec_mono_operator(string name, Object operand) throws ExecutionError {
 		double val = this.get_object(operand);
 		switch(name) {
 			case "-":
@@ -53,8 +53,8 @@ public class Float : BindingClass<double?> {
 		if(!(right_operand.instanceOf is Float)) {
 			throw new ExecutionError.VAR("You can do only the operation " + name + " with floats.");
 		}
-		var val1 = this.get_object(left_operand);
-		var val2 = this.get_object(right_operand);
+		double val1 = this.get_object(left_operand);
+		double val2 = this.get_object(right_operand);
 		switch(name) {
 			case "+":
 				return this.new_from_double(val1 + val2);
@@ -63,9 +63,10 @@ public class Float : BindingClass<double?> {
 			case "*":
 				return this.new_from_double(val1 * val2);
 			case "/":
+				if(val2 == 0) {
+					throw new ExecutionError.VAR("Division by zero.");
+				}
 				return this.new_from_double(val1 / val2);
-			case "%":
-				return this.new_from_double(val1 % val2);
 			case "=":
 				return Boolean.singleton().new_from_bool(val1 == val2);
 			case "!=":
@@ -81,7 +82,7 @@ public class Float : BindingClass<double?> {
 			default:
 				return base.exec_dual_operator(name, left_operand, right_operand);
 		}
-	}*/
+	}
 
 	public override string to_string(Object object) throws ExecutionError {
 		return this.get_object(object).to_string();
