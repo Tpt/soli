@@ -37,7 +37,7 @@ public class String : BindingClass<string> {
 		switch(name) {
 			case "length":
 				return Integer.singleton().new_from_long(obj.length);
-			case " isEmpty":
+			case "isEmpty":
 				return Boolean.singleton().new_from_bool(obj.length == 0);
 			default:
 				return base.get_var(object, name);
